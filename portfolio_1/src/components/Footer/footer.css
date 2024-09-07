@@ -46,7 +46,7 @@
 
 .footer__social-link:hover{
     background-color: var(--title-color-dark);
-}
+}S
 
 .footer__copy{
     display: block;
@@ -54,4 +54,14 @@
     color: var(--title-color);
     text-align: center;
     font-size: var(--smaller-font-size);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .footer__social-link{
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+    }
 }
