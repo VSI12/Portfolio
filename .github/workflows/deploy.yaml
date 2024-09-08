@@ -23,17 +23,17 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./portfolio  # Set the working directory
+        working-directory: ./portfolio  # Set the correct working directory
 
       # Build the React app
       - name: Build the app
         run: npm run build
-        working-directory: ./portfolio  # Set the working directory
+        working-directory: ./  # Set the correct working directory
 
       # Deploy to S3
       - name: Deploy to S3
         run: |
-          aws s3 sync ./portfolio/build s3://$S3_BUCKET_NAME --delete
+          aws s3 sync ./build s3://$S3_BUCKET_NAME --delete
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
